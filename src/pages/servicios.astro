@@ -1,0 +1,242 @@
+---
+import Welcome from "../components/Welcome.astro";
+import Layout from "../layouts/Layout.astro";
+import "../styles/global.css";
+
+
+---
+
+<Layout>
+	<main>
+		<header class="flex items-center w-full justify-between fixed top-0 left-0 bg-white z-60 pb-35">
+			<div class="flex items-center mt-*" >
+                <a href="/"></a>
+				<svg
+					class="w-24 px-6 py-4 top-0"
+					xmlns="http://www.w3.org/2000/svg"
+					x="0px"
+					y="0px"
+					width="100"
+					height="100"
+					viewBox="0 0 24 24"
+				> 
+					<path
+						d="M 12 2.0996094 L 1 12 L 4 12 L 4 21 L 10 21 L 10 14 L 14 14 L 14 21 L 20 21 L 20 12 L 23 12 L 12 2.0996094 z"
+					></path>
+				</svg>
+                <div class="flex items-center justify-center mt-60 fixed  left-0 w-full bg-white z-50 "> 
+                    <ul>
+                        <h3 class="font-playfair text-4xl ml-17">
+                            Servicios por 
+                          </h3>
+                          <h3 class="font-playfair text-4xl">
+                            Softwave "BarberShop"
+                          </h3>
+
+                    </ul>
+                    <div class="w-full border-t border-[#9b9e7d] mt-20 fixed top-40 bg-white "></div>
+
+                </div>
+
+				<nav>
+					<ul class="space-x-3 flex">
+						<a class="font-sans px-4 py-3 bg-black text-white rounded hover:bg-[#9b9e7d]" href="/contacto">Contacto</a
+						>
+						<a class="font-sans px-4 py-3 bg-black text-white rounded hover:bg-[#9b9e7d]" href="/servicios"
+							>Servicio</a
+						>
+					</ul>
+				</nav>
+			</div>
+
+			<div class="absolute left-1/2 transform -translate-x-1/2">
+				<img
+					class="w-36 mt-8 py-4"
+					src="https://img.freepik.com/vector-gratis/ilustracion-vector-herramientas-peluquero-tijeras-navaja-afeitar-poste-cinta-muestra-texto_74855-10555.jpg?t=st=1743377051~exp=1743380651~hmac=3450503a78ced1cba1dd976e09adbd3546582040ceea83c39ddea5f2abd0eb94&w=1380"
+					alt="logo"
+				/>
+			</div>
+
+			<ul class="flex items-center justify-end space-x-4 pr-6 mt-*">
+				<svg
+					class="w-15 h-15"
+					xmlns="http://www.w3.org/2000/svg"
+					x="0px"
+					y="0px"
+					width="100"
+					height="100"
+					viewBox="0 0 24 24"
+				>
+					<path
+						d="M 8 3 C 5.239 3 3 5.239 3 8 L 3 16 C 3 18.761 5.239 21 8 21 L 16 21 C 18.761 21 21 18.761 21 16 L 21 8 C 21 5.239 18.761 3 16 3 L 8 3 z M 18 5 C 18.552 5 19 5.448 19 6 C 19 6.552 18.552 7 18 7 C 17.448 7 17 6.552 17 6 C 17 5.448 17.448 5 18 5 z M 12 7 C 14.761 7 17 9.239 17 12 C 17 14.761 14.761 17 12 17 C 9.239 17 7 14.761 7 12 C 7 9.239 9.239 7 12 7 z M 12 9 A 3 3 0 0 0 9 12 A 3 3 0 0 0 12 15 A 3 3 0 0 0 15 12 A 3 3 0 0 0 12 9 z"
+					></path>
+				</svg>
+
+				<svg
+					class="w-15 h-15"
+					xmlns="http://www.w3.org/2000/svg"
+					x="0px"
+					y="0px"
+					width="100"
+					height="100"
+					viewBox="0 0 24 24"
+				>
+					<path
+						d="M19.077,4.928C17.191,3.041,14.683,2.001,12.011,2c-5.506,0-9.987,4.479-9.989,9.985 c-0.001,1.76,0.459,3.478,1.333,4.992L2,22l5.233-1.237c1.459,0.796,3.101,1.215,4.773,1.216h0.004 c5.505,0,9.986-4.48,9.989-9.985C22.001,9.325,20.963,6.816,19.077,4.928z M16.898,15.554c-0.208,0.583-1.227,1.145-1.685,1.186 c-0.458,0.042-0.887,0.207-2.995-0.624c-2.537-1-4.139-3.601-4.263-3.767c-0.125-0.167-1.019-1.353-1.019-2.581 S7.581,7.936,7.81,7.687c0.229-0.25,0.499-0.312,0.666-0.312c0.166,0,0.333,0,0.478,0.006c0.178,0.007,0.375,0.016,0.562,0.431 c0.222,0.494,0.707,1.728,0.769,1.853s0.104,0.271,0.021,0.437s-0.125,0.27-0.249,0.416c-0.125,0.146-0.262,0.325-0.374,0.437 c-0.125,0.124-0.255,0.26-0.11,0.509c0.146,0.25,0.646,1.067,1.388,1.728c0.954,0.85,1.757,1.113,2.007,1.239 c0.25,0.125,0.395,0.104,0.541-0.063c0.146-0.166,0.624-0.728,0.79-0.978s0.333-0.208,0.562-0.125s1.456,0.687,1.705,0.812 c0.25,0.125,0.416,0.187,0.478,0.291C17.106,14.471,17.106,14.971,16.898,15.554z"
+					></path>
+				</svg>
+
+				<svg
+					class="w-15 h-15"
+					xmlns="http://www.w3.org/2000/svg"
+					x="0px"
+					y="0px"
+					width="100"
+					height="100"
+					viewBox="0 0 24 24"
+				>
+					<path
+						d="M12,2C6.477,2,2,6.477,2,12c0,5.013,3.693,9.153,8.505,9.876V14.65H8.031v-2.629h2.474v-1.749 c0-2.896,1.411-4.167,3.818-4.167c1.153,0,1.762,0.085,2.051,0.124v2.294h-1.642c-1.022,0-1.379,0.969-1.379,2.061v1.437h2.995 l-0.406,2.629h-2.588v7.247C18.235,21.236,22,17.062,22,12C22,6.477,17.523,2,12,2z"
+					></path>
+				</svg>
+			</ul>
+            
+		</header>
+        <body >
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 max-w-6xl mx-auto pt-90">
+              <!-- Tarjeta 1 -->
+              <div class="max-w-sm p-6 bg-black border border-black rounded-lg shadow-sm dark:bg-[#9b9e7d] ">
+                <a href="#">
+                  <h5 class="mb-2 text-2xl font-bold tracking-tight dark:text-black">
+                    Corte de pelo
+                  </h5>
+                </a>
+                <p class="font-sans mb-3 font-normal  dark:text-black">
+                    Ajusta tu estilo con un corte profesional diseñado para destacar tus rasgos y adaptarse a tu personalidad.
+                </p>
+                <a
+                  href="#"
+                  class="font-sans inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800  dark:bg-blue-600 dark:hover:bg-blue-700 "
+                >
+                  Reserva tu hora
+                  <svg
+                    class="rtl:rotate-180 w-3.5 h-3.5 ms-2"
+                    aria-hidden="true"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 14 10"
+                  >
+                    <path
+                      stroke="currentColor"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M1 5h12m0 0L9 1m4 4L9 9"
+                    />
+                  </svg>
+                </a>
+              </div>
+          
+              <!-- Tarjeta 2 -->
+              <div class="max-w-sm p-6 bg-black border border-black rounded-lg shadow-sm dark:bg-[#9b9e7d]">
+                <a href="#">
+                  <h5 class="mb-2 text-2xl font-bold tracking-tight  dark:text-black">
+                    Perfilado de Barba
+                  </h5>
+                </a>
+                <p class="font-sans mb-3 font-normal  dark:text-black">
+                    Define y perfecciona la forma de tu barba con técnicas precisas para lograr un acabado limpio y elegante.
+                </p>
+                <a
+                  href="#"
+                  class="font-sans inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800  dark:bg-blue-600 dark:hover:bg-blue-700 "
+                >
+                  Reserva tu hora
+                  <svg
+                    class="rtl:rotate-180 w-3.5 h-3.5 ms-2"
+                    aria-hidden="true"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 14 10"
+                  >
+                    <path
+                      stroke="currentColor"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M1 5h12m0 0L9 1m4 4L9 9"
+                    />
+                  </svg>
+                </a>
+              </div>
+          
+              <!-- Tarjeta 3 -->
+              <div class="max-w-sm p-6 bg-black border border-black rounded-lg shadow-sm dark:bg-[#9b9e7d] ">
+                <a href="#">
+                  <h5 class="mb-2 text-2xl font-bold tracking-tight  dark:black">
+                    Corte de Pelo + Barba 
+                  </h5>
+                </a>
+                <p class="font-sans mb-3 font-normal  dark:text-black">
+                    Una combinación completa que incluye un corte de cabello impecable junto con el cuidado y perfilado de tu barba para un look integral.
+                </p>
+                <a
+                  href="#"
+                  class="font-sans inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800  dark:bg-blue-600 dark:hover:bg-blue-700 "
+                >
+                  Reserva tu hora
+                  <svg
+                    class="rtl:rotate-180 w-3.5 h-3.5 ms-2"
+                    aria-hidden="true"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 14 10"
+                  >
+                    <path
+                      stroke="currentColor"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M1 5h12m0 0L9 1m4 4L9 9"
+                    />
+                  </svg>
+                </a>
+              </div>
+          
+              <!-- Tarjeta 4 -->
+              <div class="max-w-sm p-6 bg-black border border-black rounded-lg shadow-sm dark:bg-[#9b9e7d] ">
+                <a href="#">
+                  <h5 class="mb-2 text-2xl font-bold tracking-tight dark:text-black">
+                    Rizos Permanente
+                  </h5>
+                </a>
+                <p class="font-sans mb-3 font-normal dark:text-black">
+                    Dale a tu cabello un estilo duradero con rizos permanentes, añadiendo volumen y textura con un toque natural.
+                </p>
+                <a
+                  href="#"
+                  class="font-sans inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800  dark:bg-blue-600 dark:hover:bg-blue-700 "
+                >
+                  Reserva tu hora
+                  <svg
+                    class="rtl:rotate-180 w-3.5 h-3.5 ms-2"
+                    aria-hidden="true"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 14 10"
+                  >
+                    <path
+                      stroke="currentColor"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M1 5h12m0 0L9 1m4 4L9 9"
+                    />
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </body>
+          
+	</main>
+</Layout>
