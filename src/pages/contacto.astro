@@ -7,10 +7,10 @@ import "../styles/global.css";
 ---
 
 <Layout>
-	<main>
+    <main class="min-h-screen flex flex-col">
 		<header class="flex items-center w-full justify-between fixed top-0 left-0 bg-white z-60 pb-35">
 			<div class="flex items-center mt-*" >
-                <a href="/"></a>
+                <a href="/">
 				<svg
 					class="w-24 px-6 py-4 top-0"
 					xmlns="http://www.w3.org/2000/svg"
@@ -19,15 +19,16 @@ import "../styles/global.css";
 					width="100"
 					height="100"
 					viewBox="0 0 24 24"
-				> 
+				>
 					<path
 						d="M 12 2.0996094 L 1 12 L 4 12 L 4 21 L 10 21 L 10 14 L 14 14 L 14 21 L 20 21 L 20 12 L 23 12 L 12 2.0996094 z"
 					></path>
 				</svg>
+			</a>
                 <div class="flex items-center justify-center mt-60 fixed  left-0 w-full bg-white z-50 "> 
                     <ul>
                         <h3 class="font-playfair text-4xl ml-17">
-                            Contacto de 
+                            Contacto de
                           </h3>
                           <h3 class="font-playfair text-4xl">
                             Softwave "BarberShop"
@@ -57,10 +58,48 @@ import "../styles/global.css";
 				/>
 			</div>
 		</header>
+
         <body>
 
 
+
+
+
+
+
+
+
+
+
           </body>
-          
+
+		  <footer class="bg-[#000000] text-white py-6">
+			<div class="container mx-auto flex flex-col md:flex-row justify-between items-center px-6">
+				<!-- Sección de redes sociales -->
+				<div class="flex space-x-6">
+					<a href="https://www.instagram.com/" target="_blank" class="hover:text-gray-400">
+						<i class="fab fa-instagram text-2xl"></i>
+					</a>
+					<a href="https://www.facebook.com/" target="_blank" class="hover:text-gray-400">
+						<i class="fab fa-facebook text-2xl"></i>
+					</a>
+					<a href="https://wa.me/XXXXXXXXXX" target="_blank" class="hover:text-gray-400">
+						<i class="fab fa-whatsapp text-2xl"></i>
+					</a>
+				</div>
+		
+				<!-- Derechos de autor -->
+				<div class="mt-4 md:mt-0 text-center md:text-left">
+					<p>© 2024 BarberShop. Todos los derechos reservados.</p>
+				</div>
+		
+				<!-- Enlaces legales -->
+				<div class="mt-4 md:mt-0">
+					<a href="#" class="text-gray-400 hover:text-[#9b9e7d] mx-2">Aviso Legal</a>
+					<a href="#" class="text-gray-400 hover:text-[#9b9e7d] mx-2">Política de Privacidad</a>
+				</div>
+			</div>
+		</footer>
 	</main>
 </Layout>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
