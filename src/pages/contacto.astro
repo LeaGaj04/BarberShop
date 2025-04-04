@@ -2,104 +2,97 @@
 import Welcome from "../components/Welcome.astro";
 import Layout from "../layouts/Layout.astro";
 import "../styles/global.css";
-
-
 ---
 
 <Layout>
-    <main class="min-h-screen flex flex-col">
-		<header class="flex items-center w-full justify-between fixed top-0 left-0 bg-white z-60 pb-35">
-			<div class="flex items-center mt-*" >
-                <a href="/">
-				<svg
-					class="w-24 px-6 py-4 top-0"
-					xmlns="http://www.w3.org/2000/svg"
-					x="0px"
-					y="0px"
-					width="100"
-					height="100"
-					viewBox="0 0 24 24"
-				>
-					<path
-						d="M 12 2.0996094 L 1 12 L 4 12 L 4 21 L 10 21 L 10 14 L 14 14 L 14 21 L 20 21 L 20 12 L 23 12 L 12 2.0996094 z"
-					></path>
-				</svg>
-			</a>
-                <div class="flex items-center justify-center mt-60 fixed  left-0 w-full bg-white z-50 "> 
-                    <ul>
-                        <h3 class="font-playfair text-4xl ml-17">
-                            Contacto de
-                          </h3>
-                          <h3 class="font-playfair text-4xl">
-                            Softwave "BarberShop"
-                          </h3>
+  <main class="min-h-screen flex flex-col">
+    <header class="flex items-center w-full justify-between fixed top-0 left-0 bg-white z-60 pb-35">
+      <div class="flex items-center mt-*">
+        <a href="/">
+          <svg
+            class="w-24 px-6 py-4 top-0"
+            xmlns="http://www.w3.org/2000/svg"
+            x="0px"
+            y="0px"
+            width="100"
+            height="100"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M 12 2.0996094 L 1 12 L 4 12 L 4 21 L 10 21 L 10 14 L 14 14 L 14 21 L 20 21 L 20 12 L 23 12 L 12 2.0996094 z"
+            ></path>
+          </svg>
+        </a>
+        <div class="flex items-center justify-center mt-60 fixed left-0 w-full bg-white z-50">
+          <ul>
+            <h3 class="font-playfair text-4xl ml-17">Contacto de</h3>
+            <h3 class="font-playfair text-4xl">Softwave "BarberShop"</h3>
+          </ul>
+          <div class="w-full border-t border-[#9b9e7d] mt-20 fixed top-40 bg-white"></div>
+        </div>
 
-                    </ul>
-                    <div class="w-full border-t border-[#9b9e7d] mt-20 fixed top-40 bg-white "></div>
+        <nav>
+          <ul class="space-x-3 flex">
+            <a class="font-sans px-4 py-3 bg-black text-white rounded hover:bg-[#9b9e7d]" href="/contacto">Contacto</a>
+            <a class="font-sans px-4 py-3 bg-black text-white rounded hover:bg-[#9b9e7d]" href="/servicios">Servicios</a>
+          </ul>
+        </nav>
+      </div>
 
-                </div>
+      <div class="absolute left-1/2 transform -translate-x-1/2">
+        <img
+          class="w-36 mt-8 py-4"
+          src="https://img.freepik.com/vector-gratis/ilustracion-vector-herramientas-peluquero-tijeras-navaja-afeitar-poste-cinta-muestra-texto_74855-10555.jpg?t=st=1743377051~exp=1743380651~hmac=3450503a78ced1cba1dd976e09adbd3546582040ceea83c39ddea5f2abd0eb94&w=1380"
+          alt="logo"
+        />
+      </div>
+    </header>
 
-				<nav>
-					<ul class="space-x-3 flex">
-						<a class="font-sans px-4 py-3 bg-black text-white rounded hover:bg-[#9b9e7d]" href="/contacto">Contacto</a
-						>
-						<a class="font-sans px-4 py-3 bg-black text-white rounded hover:bg-[#9b9e7d]" href="/servicios"
-							>Servicio</a
-						>
-					</ul>
-				</nav>
-			</div>
+    <section class="mt-64 p-10 text-center">
+      <h2 class="text-4xl font-bold text-[#9b9e7d] font-playfair mb-4">¿Tienes dudas o necesitas agendar?</h2>
+      <p class="text-gray-600 text-lg mb-10">¡Contáctanos ahora mismo y te responderemos lo antes posible!</p>
 
-			<div class="absolute left-1/2 transform -translate-x-1/2">
-				<img
-					class="w-36 mt-8 py-4"
-					src="https://img.freepik.com/vector-gratis/ilustracion-vector-herramientas-peluquero-tijeras-navaja-afeitar-poste-cinta-muestra-texto_74855-10555.jpg?t=st=1743377051~exp=1743380651~hmac=3450503a78ced1cba1dd976e09adbd3546582040ceea83c39ddea5f2abd0eb94&w=1380"
-					alt="logo"
-				/>
-			</div>
-		</header>
+      <form class="max-w-2xl mx-auto bg-white p-8 rounded-lg shadow-lg">
+        <div class="mb-4">
+          <label for="nombre" class="block text-left text-gray-700 font-semibold">Nombre</label>
+          <input type="text" id="nombre" name="nombre" class="w-full border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-[#9b9e7d]" />
+        </div>
+        <div class="mb-4">
+          <label for="correo" class="block text-left text-gray-700 font-semibold">Correo electrónico</label>
+          <input type="email" id="correo" name="correo" class="w-full border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-[#9b9e7d]" />
+        </div>
+        <div class="mb-6">
+          <label for="mensaje" class="block text-left text-gray-700 font-semibold">Mensaje</label>
+          <textarea id="mensaje" name="mensaje" rows="4" class="w-full border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-[#9b9e7d]"></textarea>
+        </div>
+        <button type="submit" class="bg-[#9b9e7d] text-white font-semibold px-6 py-3 rounded hover:bg-[#868964] transition-all">Enviar mensaje</button>
+      </form>
+    </section>
 
-        <body>
+    <footer class="bg-[#000000] text-white py-6 mt-20">
+      <div class="container mx-auto flex flex-col md:flex-row justify-between items-center px-6">
+        <div class="flex space-x-6">
+          <a href="https://www.instagram.com/" target="_blank" class="hover:text-gray-400">
+            <i class="fab fa-instagram text-2xl"></i>
+          </a>
+          <a href="https://www.facebook.com/" target="_blank" class="hover:text-gray-400">
+            <i class="fab fa-facebook text-2xl"></i>
+          </a>
+          <a href="https://wa.me/XXXXXXXXXX" target="_blank" class="hover:text-gray-400">
+            <i class="fab fa-whatsapp text-2xl"></i>
+          </a>
+        </div>
 
+        <div class="mt-4 md:mt-0 text-center md:text-left">
+          <p>© 2024 BarberShop. Todos los derechos reservados.</p>
+        </div>
 
-
-
-
-
-
-
-
-
-
-          </body>
-
-		  <footer class="bg-[#000000] text-white py-6">
-			<div class="container mx-auto flex flex-col md:flex-row justify-between items-center px-6">
-				<!-- Sección de redes sociales -->
-				<div class="flex space-x-6">
-					<a href="https://www.instagram.com/" target="_blank" class="hover:text-gray-400">
-						<i class="fab fa-instagram text-2xl"></i>
-					</a>
-					<a href="https://www.facebook.com/" target="_blank" class="hover:text-gray-400">
-						<i class="fab fa-facebook text-2xl"></i>
-					</a>
-					<a href="https://wa.me/XXXXXXXXXX" target="_blank" class="hover:text-gray-400">
-						<i class="fab fa-whatsapp text-2xl"></i>
-					</a>
-				</div>
-		
-				<!-- Derechos de autor -->
-				<div class="mt-4 md:mt-0 text-center md:text-left">
-					<p>© 2024 BarberShop. Todos los derechos reservados.</p>
-				</div>
-		
-				<!-- Enlaces legales -->
-				<div class="mt-4 md:mt-0">
-					<a href="#" class="text-gray-400 hover:text-[#9b9e7d] mx-2">Aviso Legal</a>
-					<a href="#" class="text-gray-400 hover:text-[#9b9e7d] mx-2">Política de Privacidad</a>
-				</div>
-			</div>
-		</footer>
-	</main>
+        <div class="mt-4 md:mt-0">
+          <a href="#" class="text-gray-400 hover:text-[#9b9e7d] mx-2">Aviso Legal</a>
+          <a href="#" class="text-gray-400 hover:text-[#9b9e7d] mx-2">Política de Privacidad</a>
+        </div>
+      </div>
+    </footer>
+  </main>
 </Layout>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
