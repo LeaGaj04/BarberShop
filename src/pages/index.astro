@@ -8,7 +8,140 @@ import Footer from "../components/footer.astro";
 <Layout>
 	<main class="min-h-screen flex flex-col">
 		<Header />
-		<Sucursales />
+
+		<div class="relative">
+			<img
+				class="w-full py-12 brightness-40"
+				src="/src/assets/images/stock-barber.png"
+				alt=""
+			/>
+			<h1
+				class="absolute top-[60%] left-35 -translate-y-1/2 flex items-center justify-center text-white text-5xl font-bold"
+			>
+				Mejora tu corte
+			</h1>
+			<br />
+			<h2
+				class="absolute top-[66%] left-34 -translate-y-1/2 flex items-center justify-center text-white text-5xl font-bold"
+			>
+				con nuestros servicios
+			</h2>
+		</div>
+
+		<section>
+			<h2 class="text-center text-4xl font-bold">Conócenos</h2>
+			<br />
+		</section>
+
+		<section class="items-center min-h-screen py-8">
+			<div class="grid grid-cols-6 gap-4 container max-w-5xl mx-auto">
+				<div
+					class="col-span-2 row-span-3 aspect-video bg-amber-300 rounded-2xl overflow-hidden transition-all duration-300 hover:scale-105"
+				>
+					<div class="relative group">
+						<a href="/servicios">
+							<img
+								class="w-full h-full object-cover block transition duration-300 group-hover:brightness-45"
+								src="src/assets/images/barba.jpg"
+								alt=""
+							/>
+
+							<div
+								class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300"
+							>
+								<p class="text-white text-2xl font-semibold -mt-5">
+									Servicio de barba
+								</p>
+							</div>
+						</a>
+					</div>
+				</div>
+				<div
+					class="col-span-2 row-span-3 col-start-3 bg-amber-900 rounded-2xl overflow-hidden aspect-video transition-all duration-300 hover:scale-105"
+				>
+					<div class="relative group">
+						<a href="/servicios">
+							<img
+								class="w-full h-full object-cover block transition duration-300 group-hover:brightness-45"
+								src="src/assets/images/cejas.jpg"
+								alt=""
+							/>
+
+							<div
+								class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300"
+							>
+								<p class="text-white text-2xl font-semibold -mt-5">
+									Servicio de cejas
+								</p>
+							</div>
+						</a>
+					</div>
+				</div>
+				<div
+					class="col-span-2 row-span-3 col-start-5 bg-black rounded-2xl overflow-hidden aspect-video transition-all duration-300 hover:scale-105"
+				>
+					<div class="relative group">
+						<a href="/servicios">
+							<img
+								class="w-full h-full object-cover block transition duration-300 group-hover:brightness-45"
+								src="src/assets/images/teñido.jpg"
+								alt=""
+							/>
+
+							<div
+								class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300"
+							>
+								<p class="text-white text-2xl font-semibold -mt-5">
+									Servicio de tintura
+								</p>
+							</div>
+						</a>
+					</div>
+				</div>
+				<div
+					class="col-span-2 row-span-3 row-start-4 bg-red-700 rounded-2xl overflow-hidden transition-all duration-300 hover:scale-105"
+				>
+					<div class="relative group w-full h-full">
+						<a href="/servicios">
+							<img
+								class="w-full h-full object-cover block transition duration-300 group-hover:brightness-45"
+								src="src/assets/images/corte.jpg"
+								alt=""
+							/>
+
+							<div
+								class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300"
+							>
+								<p class="text-white text-2xl font-semibold">
+									Servicio de peluqueria
+								</p>
+							</div>
+						</a>
+					</div>
+				</div>
+				<div
+					class="col-span-4 row-span-3 col-start-3 row-start-4 bg-cyan-600 rounded-2xl overflow-hidden aspect-video transition-all duration-300 hover:scale-y-105"
+				>
+					<div class="relative group">
+						<a href="/sucursaless">
+							<img
+								class="w-full h-full object-cover block transition duration-300 group-hover:brightness-45"
+								src="src/assets/Vespucio.jpg"
+								alt=""
+							/>
+
+							<div
+								class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300"
+							>
+								<p class="text-white text-2xl font-semibold -mt-5">
+									Nuestras sucursales
+								</p>
+							</div>
+						</a>
+					</div>
+				</div>
+			</div>
+		</section>
 		<Footer />
 	</main>
 </Layout>
