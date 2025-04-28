@@ -8,8 +8,20 @@
 
     
   }
+  h1, h2{
+    font-family: "Playfair Display";
+  }
   
-  body {
-    font-family: "Playfair Display", serif;
+  @font-face {
+    font-family: "Montserrat";
+    src: url("/fonts/Montserrat-Italic-VariableFont_wght.ttf") format("woff");
+    font-weight: normal;
+    font-style: normal;
+
+    
+  }
+  
+  body, p {
+    font-family: "Montserrat", serif;
   }
   
