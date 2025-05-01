@@ -1,4 +1,91 @@
-<section class="mt-10 p-10 text-center">
-    <h1>Boleta</h1>
+---
+const services = [
+  { name: "Corte de pelo", price: 10000 },
+  { name: "Perfilado de barba", price: 8000 },
+  { name: "Corte de pelo + barba", price: 14000 },
+  { name: "Rizos permanentes", price: 50000 }
+];
 
-</section>
+let selectedService = services[0];
+let selectedPrice = selectedService.price;
+let selectedTime = "";
+let abonoprice = selectedPrice / 2;
+---
+
+<div class="p-6 bg-white">
+  <h1 class="text-xl mb-4">Reserva tu hora aquí!</h1>
+  
+  <label class="block mb-2">Selecciona tu servicio:</label>
+  <select class="border p-2 w-full" id="serviceSelect">
+    {services.map(service => (
+      <option value={service.name}>{service.name} - ${service.price}</option>
+    ))}
+  </select>
+  
+  <label class="block mt-4 mb-2">Selecciona horario:</label>
+  <input type="datetime-local" class="border p-2 w-full" onchange="updateTime(event)" />
+  
+  <p class="mt-4 text-lg font-semibold">
+    Abono: $<span id="abono">{abonoprice}</span>
+    <br>
+    Dia: <span id="selectedTime">{selectedTime}</span>
+  </p>
+
+  <button class="mt-4 bg-black text-white rounded hover:bg-[#9b9e7d] p-2 w-full" onclick="handlePayment()">
+    Pagar abono
+  </button>
+</div>
+
+<script>
+        document.addEventListener("DOMContentLoaded", () => {
+    const selectElement = document.getElementById("serviceSelect");
+    if (selectElement) {
+        selectElement.addEventListener("change", updateService);
+        console.log("Evento change vinculado correctamente al select.");
+    } else {
+        console.error("Error: No se encontró el elemento select.");
+    }
+    });
+
+  let services = [
+    { name: "Corte de pelo", price: 10000 },
+    { name: "Perfilado de barba", price: 8000 },
+    { name: "Corte de pelo + barba", price: 14000 },
+    { name: "Rizos permanentes", price: 50000 }
+  ];
+
+  let selectedService = services[0]; 
+  let selectedPrice = selectedService.price;
+  let selectedTime = "";
+
+  function updateService(event: Event) {
+  const serviceName = (event.target as HTMLSelectElement).value;
+  const newService = services.find(s => s.name === serviceName);
+
+  if (!newService) {
+    console.error("Error: Servicio no encontrado.");
+    return;
+  }
+
+  selectedService = newService;
+  selectedPrice = selectedService.price;
+
+
+  const abonoElement = document.getElementById("abono");
+  if (abonoElement) {
+    abonoElement.innerText = (selectedPrice / 2).toString();
+  }
+}
+
+function updateTime(event: Event) {
+  console.log("Ejecutando updateTime()");
+  selectedTime = (event.target as HTMLInputElement).value;
+  console.log("Fecha/hora seleccionada:", selectedTime);
+
+  const timeElement = document.getElementById("selectedTime");
+  if (timeElement) {
+    timeElement.innerText = selectedTime;
+  }
+}
+
+</script>
