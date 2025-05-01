@@ -21,15 +21,14 @@ let abonoprice = selectedPrice / 2;
       <option value={service.name}>{service.name} - ${service.price}</option>
     ))}
   </select>
-  
-  <label class="block mt-4 mb-2">Selecciona horario:</label>
-  <input type="datetime-local" class="border p-2 w-full" onchange="updateTime(event)" />
-  
+  <label class="block mb-2">Selecciona una fecha:</label>
+  <input type="datetime-local" class="border p-2 w-full" id="timeSelect" />
   <p class="mt-4 text-lg font-semibold">
-    Abono: $<span id="abono">{abonoprice}</span>
+    Abono: <span id="abono">${abonoprice}</span>
     <br>
-    Dia: <span id="selectedTime">{selectedTime}</span>
+    Día: <span id="selectedTime"></span>
   </p>
+
 
   <button class="mt-4 bg-black text-white rounded hover:bg-[#9b9e7d] p-2 w-full" onclick="handlePayment()">
     Pagar abono
@@ -45,7 +44,15 @@ let abonoprice = selectedPrice / 2;
     } else {
         console.error("Error: No se encontró el elemento select.");
     }
-    });
+        const timeElement = document.getElementById("timeSelect");
+    if (timeElement) {
+        timeElement.addEventListener("change", updateTime);
+        console.log("Evento change vinculado correctamente al input de fecha/hora.");
+    } else {
+        console.error("Error: No se encontró el elemento datetime-local.");
+    }
+});
+
 
   let services = [
     { name: "Corte de pelo", price: 10000 },
@@ -78,14 +85,18 @@ let abonoprice = selectedPrice / 2;
 }
 
 function updateTime(event: Event) {
-  console.log("Ejecutando updateTime()");
-  selectedTime = (event.target as HTMLInputElement).value;
-  console.log("Fecha/hora seleccionada:", selectedTime);
+    console.log("Ejecutando updateTime()");
 
-  const timeElement = document.getElementById("selectedTime");
-  if (timeElement) {
-    timeElement.innerText = selectedTime;
-  }
+    selectedTime = (event.target as HTMLInputElement).value;
+    console.log("Fecha/hora seleccionada:", selectedTime);
+
+    // Asegurar que `selectedTime` se refleje en el HTML
+    const displayTimeElement = document.getElementById("selectedTime");
+    if (displayTimeElement) {
+        displayTimeElement.innerText = selectedTime;
+    } else {
+        console.error("Error: No se encontró el elemento selectedTime.");
+    }
 }
 
 </script>
