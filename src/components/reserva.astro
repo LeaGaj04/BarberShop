@@ -24,7 +24,7 @@ let abonoprice = selectedPrice / 2;
   <label class="block mb-2">Selecciona una fecha:</label>
   <input type="datetime-local" class="border p-2 w-full" id="timeSelect" />
   <p class="mt-4 text-lg font-semibold">
-    Abono: <span id="abono">${abonoprice}</span>
+    Abono: $<span id="abono">{abonoprice}</span>
     <br>
     Día: <span id="selectedTime"></span>
   </p>
@@ -90,7 +90,6 @@ function updateTime(event: Event) {
     selectedTime = (event.target as HTMLInputElement).value;
     console.log("Fecha/hora seleccionada:", selectedTime);
 
-    // Asegurar que `selectedTime` se refleje en el HTML
     const displayTimeElement = document.getElementById("selectedTime");
     if (displayTimeElement) {
         displayTimeElement.innerText = selectedTime;
