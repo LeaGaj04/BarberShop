@@ -1,5 +1,25 @@
 {
   "extends": "astro/tsconfigs/strict",
-  "include": [".astro/types.d.ts", "**/*"],
-  "exclude": ["dist"]
+  "compilerOptions": {
+    // Habilita la resolución de módulos al estilo Node.js
+    "moduleResolution": "node",
+    // Permite importar CommonJS con default imports
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    // Si el SDK trae JSON (por ejemplo, para esquemas), habilita esto
+    "resolveJsonModule": true,
+    // Incluye los tipos de Node.js (necesarios para muchas lib de servidor)
+    "types": ["node"],
+    // Opcional: evita errores en librerías de terceros
+    "skipLibCheck": true,
+    // (Opcional) Si creas tu propio .d.ts para MercadoPago
+    "typeRoots": ["./types", "./node_modules/@types"]
+  },
+  "include": [
+    ".astro/types.d.ts",
+    "**/*"
+  ],
+  "exclude": [
+    "dist"
+  ]
 }

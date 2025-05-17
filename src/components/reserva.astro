@@ -1,101 +1,100 @@
 ---
 const services = [
-  { name: "Corte de pelo", price: 10000 },
-  { name: "Perfilado de barba", price: 8000 },
-  { name: "Corte de pelo + barba", price: 14000 },
-  { name: "Rizos permanentes", price: 50000 }
+  { id: "1", name: "Corte de pelo",         price: 10000 },
+  { id: "2", name: "Perfilado de barba",    price:  8000 },
+  { id: "3", name: "Corte de pelo + barba", price: 14000 },
+  { id: "4", name: "Rizos permanentes",     price: 50000 },
 ];
 
 let selectedService = services[0];
-let selectedPrice = selectedService.price;
 let selectedTime = "";
-let abonoprice = selectedPrice / 2;
 ---
-
-<div class="p-6 bg-white">
+<form class="p-6 bg-white max-w-md mx-auto">
   <h1 class="text-xl mb-4">Reserva tu hora aquí!</h1>
-  
-  <label class="block mb-2">Selecciona tu servicio:</label>
-  <select class="border p-2 w-full" id="serviceSelect">
-    {services.map(service => (
-      <option value={service.name}>{service.name} - ${service.price}</option>
+
+  <label for="serviceSelect" class="block mb-1 font-medium">Selecciona tu servicio:</label>
+  <select id="serviceSelect" class="border p-2 w-full mb-4">
+    {services.map(s => (
+      <option value={s.id}>{s.name} – ${s.price}</option>
     ))}
   </select>
-  <label class="block mb-2">Selecciona una fecha:</label>
-  <input type="datetime-local" class="border p-2 w-full" id="timeSelect" />
+
+  <label for="timeSelect" class="block mb-1 font-medium">Selecciona una fecha:</label>
+  <input id="timeSelect" type="datetime-local" class="border p-2 w-full mb-4" />
+
   <p class="mt-4 text-lg font-semibold">
-    Abono: $<span id="abono">{abonoprice}</span>
-    <br>
-    Día: <span id="selectedTime"></span>
+    Abono: $<span id="abono">{(selectedService.price / 2).toFixed(0)}</span><br />
+    Día: <span id="selectedTime">{selectedTime}</span>
   </p>
 
+  <label for="email" class="block mb-1 font-medium">Tu correo:</label>
+  <input
+    id="email"
+    type="email"
+    class="border p-2 w-full mb-6"
+    placeholder="ejemplo@dominio.com"
+  />
 
-  <button class="mt-4 bg-black text-white rounded hover:bg-[#9b9e7d] p-2 w-full" onclick="handlePayment()">
+  <button
+    id="payButton"
+    type="button"
+    class="bg-black text-white rounded hover:bg-[#9b9e7d] p-2 w-full"
+  >
     Pagar abono
   </button>
-</div>
+</form>
 
-<script>
-        document.addEventListener("DOMContentLoaded", () => {
-    const selectElement = document.getElementById("serviceSelect");
-    if (selectElement) {
-        selectElement.addEventListener("change", updateService);
-        console.log("Evento change vinculado correctamente al select.");
-    } else {
-        console.error("Error: No se encontró el elemento select.");
-    }
-        const timeElement = document.getElementById("timeSelect");
-    if (timeElement) {
-        timeElement.addEventListener("change", updateTime);
-        console.log("Evento change vinculado correctamente al input de fecha/hora.");
-    } else {
-        console.error("Error: No se encontró el elemento datetime-local.");
-    }
-});
+<script type="module" is:inline>
+  document.addEventListener("DOMContentLoaded", () => {
+    const services = [
+      { id: "1", name: "Corte de pelo",         price: 5000 },
+      { id: "2", name: "Perfilado de barba",    price:  4000 },
+      { id: "3", name: "Corte de pelo + barba", price: 7000 },
+      { id: "4", name: "Rizos permanentes",     price: 25000 },
+    ];
+    let selectedService = services[0];
+    let selectedTime = "";
 
+    const serviceSelect = document.getElementById("serviceSelect");
+    const timeSelect    = document.getElementById("timeSelect");
+    const abonoEl       = document.getElementById("abono");
+    const timeEl        = document.getElementById("selectedTime");
+    const emailEl       = document.getElementById("email");
+    const payButton     = document.getElementById("payButton");
 
-  let services = [
-    { name: "Corte de pelo", price: 10000 },
-    { name: "Perfilado de barba", price: 8000 },
-    { name: "Corte de pelo + barba", price: 14000 },
-    { name: "Rizos permanentes", price: 50000 }
-  ];
+    serviceSelect.addEventListener("change", (e) => {
+      const id = e.target.value;
+      const svc = services.find(s => s.id === id);
+      if (!svc) return;
+      selectedService = svc;
+      abonoEl.innerText = (svc.price).toFixed(0);
+    });
 
-  let selectedService = services[0]; 
-  let selectedPrice = selectedService.price;
-  let selectedTime = "";
+    timeSelect.addEventListener("change", (e) => {
+      selectedTime = e.target.value;
+      timeEl.innerText = selectedTime;
+    });
 
-  function updateService(event: Event) {
-  const serviceName = (event.target as HTMLSelectElement).value;
-  const newService = services.find(s => s.name === serviceName);
+    payButton.addEventListener("click", async () => {
+      const service = selectedService;
+      const email   = emailEl.value;
+      const cardToken = "TEST-5212547685703774-051620-52a2d2364ac33c29ddc1e5cf19c87b41-1576728159";
 
-  if (!newService) {
-    console.error("Error: Servicio no encontrado.");
-    return;
-  }
-
-  selectedService = newService;
-  selectedPrice = selectedService.price;
-
-
-  const abonoElement = document.getElementById("abono");
-  if (abonoElement) {
-    abonoElement.innerText = (selectedPrice / 2).toString();
-  }
-}
-
-function updateTime(event: Event) {
-    console.log("Ejecutando updateTime()");
-
-    selectedTime = (event.target as HTMLInputElement).value;
-    console.log("Fecha/hora seleccionada:", selectedTime);
-
-    const displayTimeElement = document.getElementById("selectedTime");
-    if (displayTimeElement) {
-        displayTimeElement.innerText = selectedTime;
-    } else {
-        console.error("Error: No se encontró el elemento selectedTime.");
-    }
-}
-
+      try {
+        const res = await fetch("/api/create-order", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ service, email, cardToken })
+        });
+        const data = await res.json();
+        if (data.init_point) {
+          window.location.href = data.init_point;
+        } else {
+          console.error("No se recibió init_point:", data);
+        }
+      } catch (err) {
+        console.error("Error en la petición:", err);
+      }
+    });
+  });
 </script>
